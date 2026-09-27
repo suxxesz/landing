@@ -1,0 +1,44 @@
+@use '../../../../shared/styles/helpers' as *;
+
+.audio-popup {
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  width: 100vw;
+  height: 100dvh;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  font-size: 22px;
+
+  background: rgba(227, 223, 223, 0.08);
+  backdrop-filter: blur(999.3px);
+  -webkit-backdrop-filter: blur(9.3px);
+
+  pointer-events: none;
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+
+  visibility: hidden;
+
+  z-index: 9999;
+
+  &.show-popup {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
